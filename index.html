@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Customer Survey</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Quicksand:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="boring-survey-screen">
+        <div class="survey-container">
+            <h2 id="survey-title">Feedback Analysis Prototype</h2>
+            <p id="survey-desc">Please complete all steps to help us improve our services.</p>
+
+            <div class="survey-step active" id="step-1">
+                <label>Step 1 of 7: Please select your preferred communication languages (Select exactly 3. English and Tagalog are required, so they are auto-selected):</label>
+                <div class="boring-checkboxes" id="lang-checkboxes">
+                    <label><input type="checkbox" value="es"> Spanish</label>
+                    <label><input type="checkbox" value="de"> German</label>
+                    <label><input type="checkbox" value="ko"> Korean</label>
+                    <label><input type="checkbox" value="ja"> Japanese</label>
+                    <label><input type="checkbox" value="it"> Italian</label>
+                    <label><input type="checkbox" value="fr"> French</label>
+                </div>
+                <div class="error-msg" id="step1-error">Please select exactly 3 languages.</div>
+            </div>
+
+            <div class="survey-step" id="step-2">
+                <label>Step 2 of 7: What do you think about the current water pricing and billing?</label>
+                <textarea id="q-pricing" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <div class="error-msg" id="step2-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-3">
+                <label>Step 3 of 7: How would you rate the current water quality in your area?</label>
+                <textarea id="q-quality" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <div class="error-msg" id="step3-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-4">
+                <label>Step 4 of 7: How is the water pressure in your household?</label>
+                <div class="boring-radio-group">
+                    <label><input type="radio" name="water-pressure" value="high"> High Pressure</label>
+                    <label><input type="radio" name="water-pressure" value="low"> Low / Weak Pressure</label>
+                </div>
+                <div class="error-msg" id="step4-error">Please select an option.</div>
+            </div>
+
+            <div class="survey-step" id="step-5">
+                <label>Step 5 of 7: Overall, what do you think about the service of the water district?</label>
+                <textarea id="q-service" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <div class="error-msg" id="step5-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-6">
+                <label>Step 6 of 7: What do you recommend to improve our services?</label>
+                <textarea id="q-recommend" rows="4" placeholder="Enter your recommendations here..."></textarea>
+                <div class="error-msg" id="step6-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-7">
+                <label>Step 7 of 7: For identity verification, please upload exactly 5 recent photos of yourself:</label>
+                <input type="file" id="pic-upload" accept="image/*" multiple>
+                <div class="boring-status" id="pic-status">0 / 5 files selected</div>
+                <div class="error-msg" id="step7-error">Please upload exactly 5 images.</div>
+            </div>
+
+            <div class="survey-footer">
+                <button id="survey-next-btn">Next</button>
+                <button id="survey-submit-btn" class="hidden">Submit Survey</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="joke-screen" class="hidden">
+        <img src="tawa.jpg" alt="HAHAHA"> 
+        <h1>eme lang yung about sa water district HAHAHAHAHAHA</h1>
+    </div>
+
+    <div id="intro-screen" class="hidden">
+        <h1 id="intro-text"></h1>
+    </div>
+
+    <audio id="bgMusic" src="hbd.mp3"></audio>
+
+    <div id="floating-emojis-container"></div>
+    <div id="floating-pics-container"></div>
+
+    <div class="pop-art-container" id="envelope-wrapper">
+        <div class="tulip tulip-top-left">🌷</div>
+        <div class="candy-heart heart-1">BE<br>MINE</div>
+        <div class="candy-heart heart-2">LOVE<br>YOU</div>
+        <div class="stamp stamp-top-right"><div class="stamp-inner">LIVE</div></div>
+
+        <div class="envelope" id="envelope">
+            <div style="position: absolute; width: 100%; height: 100%; background: #FFB3D1; border-radius: 4px;"></div>
+            
+            <div class="letter">
+                <div class="book" id="book">
+                    <div class="book-page" style="z-index: 4;">
+                        <div class="page-content">
+                            <h1>Happy Birthday!</h1>
+                            <p>Hi Nezlie Nuñez, also known as mahal ko! Happy Birthday po🥳. My wish ay sana maging successful ka sa lahat ng bagay na gagawin mo at gusto mong gawin.</p>
+                        </div>
+                    </div>
+                    <div class="book-page" style="z-index: 3;">
+                        <div class="page-content">
+                            <p>Maging healthy ka always and di magka sakit. Kahit anong path ang gusto mong tahakin, always remember na naka support ako sayo and I'm always proud to you no matter what the result is.</p><br>
+                            <p>If need mo ng masasandalan every time na napapagod ka, I'm always here for you.</p>
+                        </div>
+                    </div>
+                    <div class="book-page" style="z-index: 2;">
+                        <div class="page-content">
+                            <p>If need mo ng help, kahit ano pa yan, I'm always here for you. If need mo ng money, I'm gonna help you. Basta tandaan mo na kahit anong mangyari, I'm always here for you, mahal ko.</p>
+                        </div>
+                    </div>
+                    <div class="book-page" style="z-index: 1;">
+                        <div class="page-content">
+                            <p>Hinding hindi ako mawawala sayo, although may nagawa akong mali, papatunayan ko sayo na I'm a man now, not a boy. Like what I said to you last time, I'm not here for game like I was before. I'm here, dating you to marry you someday.</p>
+                            <p>Looking forward to a lifetime of love and happiness together.</p>
+                            <p class="highlight">I LOVE YOU & HAPPY BIRTHDAY, MAHAL KO! MWAAAAA!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="controls" id="controls">
+                    <button id="prevBtn" class="nav-btn hidden">Back</button>
+                    <button id="nextBtn" class="nav-btn">Next</button>
+                </div>
+            </div>
+            
+            <div class="front-pocket">
+                <div class="front-bg"></div>
+                <div class="front-shape"></div>
+            </div>
+
+            <div class="flap-hinge">
+                <div class="flap-shape"></div>
+            </div>
+            
+            <div class="seal" id="sealBtn">Open It!</div>
+        </div>
+        <div class="stamp stamp-bottom-left"><div class="stamp-inner">🐻</div></div>
+        <div class="tulip tulip-bottom-right">🌷</div>
+    </div>
+
+    <div id="particles-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
