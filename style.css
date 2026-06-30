@@ -152,7 +152,6 @@ input[type="file"] { display: block; margin-bottom: 10px; font-size: 13px; }
 }
 .envelope:active { transform: scale(0.95) translate(4px, 4px); box-shadow: 4px 4px 0px rgba(0,0,0,0.8); }
 
-/* Front pocket of envelope (stable triangles) */
 .front-pocket {
     position: absolute; bottom: 0; left: 0; width: 100%; height: 180px;
     overflow: hidden; z-index: 3; border-radius: 0 0 6px 6px; pointer-events: none;
@@ -167,7 +166,6 @@ input[type="file"] { display: block; margin-bottom: 10px; font-size: 13px; }
     border: 4px solid #111; border-radius: 10px; transform: rotate(45deg);
 }
 
-/* Flap wrapper & shape (stable hinge) */
 .flap-hinge {
     position: absolute; top: 0; left: 0; width: 100%; height: 175px;
     transform-origin: top; overflow: hidden; z-index: 4; pointer-events: none;
@@ -179,7 +177,6 @@ input[type="file"] { display: block; margin-bottom: 10px; font-size: 13px; }
     border: 4px solid #111; border-radius: 15px; transform: rotate(45deg);
 }
 
-/* Open Animation for Flap */
 .pop-art-container.open .flap-hinge { 
     transform: rotateX(180deg); z-index: 1; 
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), z-index 0s 0s; 
@@ -200,18 +197,19 @@ input[type="file"] { display: block; margin-bottom: 10px; font-size: 13px; }
     background: #FDF9EC; border: 4px solid #111; border-radius: 4px; padding: 20px 15px;
     transform-origin: left center; transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1); 
     backface-visibility: hidden; box-shadow: inset -4px 0 10px rgba(0,0,0,0.04); 
-    overflow-y: auto; overflow-x: hidden; /* Fixes text spilling out! */
+    overflow-y: auto; overflow-x: hidden; 
 }
 .book-page.flipped { transform: rotateY(-180deg); }
 
-/* Hidden Scrollbars for aesthetics */
 .book-page::-webkit-scrollbar { width: 4px; }
 .book-page::-webkit-scrollbar-track { background: transparent; }
 .book-page::-webkit-scrollbar-thumb { background: #FF85B3; border-radius: 4px; }
 
 .page-content { width: 100%; min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+
+/* Typography styling updated for Justify alignment */
 .book-page h1 { font-family: 'Shrikhand', cursive; font-size: clamp(18px, 6vw, 22px); color: #111; text-align: center; margin-bottom: 15px; }
-.book-page p { font-size: clamp(11px, 3.5vw, 13px); color: #111; font-weight: 600; line-height: 1.5; }
+.book-page p { font-size: clamp(11px, 3.5vw, 13px); color: #111; font-weight: 600; line-height: 1.5; text-align: justify; hyphens: auto; }
 .book-page .highlight { font-family: 'Shrikhand', cursive; font-size: clamp(13px, 4vw, 15px); color: #E24A4A; text-align: center; display: block; margin-top: 15px; }
 
 .controls { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; opacity: 0; transition: opacity 0.6s ease 0.8s; pointer-events: none; }
