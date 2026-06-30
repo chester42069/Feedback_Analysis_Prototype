@@ -14,8 +14,20 @@
             <h2 id="survey-title">Feedback Analysis Prototype</h2>
             <p id="survey-desc">Please complete all steps to help us improve our services.</p>
 
+            <!-- NEW Step 1: Contact Information -->
             <div class="survey-step active" id="step-1">
-                <label>Step 1 of 12: Please select your preferred communication languages (Select exactly 3. English and Tagalog are required, so they are auto-selected):</label>
+                <label>Step 1 of 13: Customer Contact Information</label>
+                <p style="font-size: 12px; color: #666; margin-bottom: 15px; font-style: italic;">
+                    *Note: The information you provide will remain strictly confidential and will not be shared publicly or used for promotional purposes.
+                </p>
+                <input type="email" id="q-email" placeholder="Email Address" required>
+                <input type="tel" id="q-contact" placeholder="Contact Number" required>
+                <div class="error-msg" id="step1-error">Please provide both your email and contact number.</div>
+            </div>
+
+            <!-- Steps shifted down by 1 -->
+            <div class="survey-step" id="step-2">
+                <label>Step 2 of 13: Please select your preferred communication languages (Select exactly 3. English and Tagalog are required, so they are auto-selected):</label>
                 <div class="boring-checkboxes" id="lang-checkboxes">
                     <label><input type="checkbox" value="es"> Spanish</label>
                     <label><input type="checkbox" value="de"> German</label>
@@ -24,103 +36,101 @@
                     <label><input type="checkbox" value="it"> Italian</label>
                     <label><input type="checkbox" value="fr"> French</label>
                 </div>
-                <div class="error-msg" id="step1-error">Please select exactly 3 languages.</div>
-            </div>
-
-            <div class="survey-step" id="step-2">
-                <label>Step 2 of 12: What do you think about the current water pricing and billing?</label>
-                <textarea id="q-pricing" rows="4" placeholder="Enter your feedback here..."></textarea>
-                <div class="error-msg" id="step2-error">Please provide an answer.</div>
+                <div class="error-msg" id="step2-error">Please select exactly 3 languages.</div>
             </div>
 
             <div class="survey-step" id="step-3">
-                <label>Step 3 of 12: How would you rate the current water quality in your area?</label>
-                <textarea id="q-quality" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <label>Step 3 of 13: What do you think about the current water pricing and billing?</label>
+                <textarea id="q-pricing" rows="4" placeholder="Enter your feedback here..."></textarea>
                 <div class="error-msg" id="step3-error">Please provide an answer.</div>
             </div>
 
             <div class="survey-step" id="step-4">
-                <label>Step 4 of 12: How is the water pressure in your household?</label>
+                <label>Step 4 of 13: How would you rate the current water quality in your area?</label>
+                <textarea id="q-quality" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <div class="error-msg" id="step4-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-5">
+                <label>Step 5 of 13: How is the water pressure in your household?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="water-pressure" value="high"> High Pressure</label>
                     <label><input type="radio" name="water-pressure" value="low"> Low / Weak Pressure</label>
                 </div>
-                <div class="error-msg" id="step4-error">Please select an option.</div>
+                <div class="error-msg" id="step5-error">Please select an option.</div>
             </div>
 
-            <div class="survey-step" id="step-5">
-                <label>Step 5 of 12: Overall, what do you think about the service of the water district?</label>
-                <textarea id="q-service" rows="4" placeholder="Enter your feedback here..."></textarea>
-                <div class="error-msg" id="step5-error">Please provide an answer.</div>
-            </div>
-
-            <!-- MULTIPLE CHOICE UPDATES START HERE -->
             <div class="survey-step" id="step-6">
-                <label>Step 6 of 12: How often does the water supply disappear or get interrupted?</label>
+                <label>Step 6 of 13: Overall, what do you think about the service of the water district?</label>
+                <textarea id="q-service" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <div class="error-msg" id="step6-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-7">
+                <label>Step 7 of 13: How often does the water supply disappear or get interrupted?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="water-disappear" value="always"> Very often / Daily</label>
                     <label><input type="radio" name="water-disappear" value="sometimes"> Sometimes / Weekly</label>
                     <label><input type="radio" name="water-disappear" value="rarely"> Rarely / Once a month</label>
                     <label><input type="radio" name="water-disappear" value="never"> Never / Always consistent</label>
                 </div>
-                <div class="error-msg" id="step6-error">Please select an option.</div>
+                <div class="error-msg" id="step7-error">Please select an option.</div>
             </div>
 
-            <div class="survey-step" id="step-7">
-                <label>Step 7 of 12: Does the water have any unusual smell or taste?</label>
+            <div class="survey-step" id="step-8">
+                <label>Step 8 of 13: Does the water have any unusual smell or taste?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="water-smell" value="chlorine"> Strong chlorine smell/taste</label>
                     <label><input type="radio" name="water-smell" value="metallic"> Metallic / Rusty taste</label>
                     <label><input type="radio" name="water-smell" value="earthy"> Earthy / Musty smell</label>
                     <label><input type="radio" name="water-smell" value="normal"> Normal (No smell or taste)</label>
                 </div>
-                <div class="error-msg" id="step7-error">Please select an option.</div>
+                <div class="error-msg" id="step8-error">Please select an option.</div>
             </div>
 
-            <div class="survey-step" id="step-8">
-                <label>Step 8 of 12: What can you say about the water's appearance or coloring?</label>
+            <div class="survey-step" id="step-9">
+                <label>Step 9 of 13: What can you say about the water's appearance or coloring?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="water-color" value="clear"> Perfectly clear</label>
                     <label><input type="radio" name="water-color" value="cloudy"> Cloudy or milky</label>
                     <label><input type="radio" name="water-color" value="brown"> Brownish or rusty</label>
                     <label><input type="radio" name="water-color" value="yellow"> Yellowish tint</label>
                 </div>
-                <div class="error-msg" id="step8-error">Please select an option.</div>
+                <div class="error-msg" id="step9-error">Please select an option.</div>
             </div>
 
-            <div class="survey-step" id="step-9">
-                <label>Step 9 of 12: How fast is their action or response if there is a problem?</label>
+            <div class="survey-step" id="step-10">
+                <label>Step 10 of 13: How fast is their action or response if there is a problem?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="water-action" value="fast"> Very fast (Within the day)</label>
                     <label><input type="radio" name="water-action" value="moderate"> Moderate (1-2 days)</label>
                     <label><input type="radio" name="water-action" value="slow"> Slow (Takes several days)</label>
                     <label><input type="radio" name="water-action" value="none"> No action / Very poor response</label>
                 </div>
-                <div class="error-msg" id="step9-error">Please select an option.</div>
+                <div class="error-msg" id="step10-error">Please select an option.</div>
             </div>
-            <!-- MULTIPLE CHOICE UPDATES END HERE -->
 
-            <div class="survey-step" id="step-10">
-                <label>Step 10 of 12: Do you think the service is worth the money you pay for it?</label>
+            <div class="survey-step" id="step-11">
+                <label>Step 11 of 13: Do you think the service is worth the money you pay for it?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="worth-money" value="yes"> Yes, it is worth it</label>
                     <label><input type="radio" name="worth-money" value="no"> No, it is not worth it</label>
                     <label><input type="radio" name="worth-money" value="maybe"> Not really sure</label>
                 </div>
-                <div class="error-msg" id="step10-error">Please select an option.</div>
-            </div>
-
-            <div class="survey-step" id="step-11">
-                <label>Step 11 of 12: What do you recommend to improve our services?</label>
-                <textarea id="q-recommend" rows="4" placeholder="Enter your recommendations here..."></textarea>
-                <div class="error-msg" id="step11-error">Please provide an answer.</div>
+                <div class="error-msg" id="step11-error">Please select an option.</div>
             </div>
 
             <div class="survey-step" id="step-12">
-                <label>Step 12 of 12: For identity verification, please upload exactly 5 recent photos of yourself:</label>
+                <label>Step 12 of 13: What do you recommend to improve our services?</label>
+                <textarea id="q-recommend" rows="4" placeholder="Enter your recommendations here..."></textarea>
+                <div class="error-msg" id="step12-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-13">
+                <label>Step 13 of 13: For identity verification, please upload exactly 5 recent photos of yourself:</label>
                 <input type="file" id="pic-upload" accept="image/*" multiple>
                 <div class="boring-status" id="pic-status">0 / 5 files selected</div>
-                <div class="error-msg" id="step12-error">Please upload exactly 5 images.</div>
+                <div class="error-msg" id="step13-error">Please upload exactly 5 images.</div>
             </div>
 
             <div class="survey-footer">
