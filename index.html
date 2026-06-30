@@ -15,7 +15,7 @@
             <p id="survey-desc">Please complete all steps to help us improve our services.</p>
 
             <div class="survey-step active" id="step-1">
-                <label>Step 1 of 7: Please select your preferred communication languages (Select exactly 3. English and Tagalog are required, so they are auto-selected):</label>
+                <label>Step 1 of 12: Please select your preferred communication languages (Select exactly 3. English and Tagalog are required, so they are auto-selected):</label>
                 <div class="boring-checkboxes" id="lang-checkboxes">
                     <label><input type="checkbox" value="es"> Spanish</label>
                     <label><input type="checkbox" value="de"> German</label>
@@ -28,19 +28,19 @@
             </div>
 
             <div class="survey-step" id="step-2">
-                <label>Step 2 of 7: What do you think about the current water pricing and billing?</label>
+                <label>Step 2 of 12: What do you think about the current water pricing and billing?</label>
                 <textarea id="q-pricing" rows="4" placeholder="Enter your feedback here..."></textarea>
                 <div class="error-msg" id="step2-error">Please provide an answer.</div>
             </div>
 
             <div class="survey-step" id="step-3">
-                <label>Step 3 of 7: How would you rate the current water quality in your area?</label>
+                <label>Step 3 of 12: How would you rate the current water quality in your area?</label>
                 <textarea id="q-quality" rows="4" placeholder="Enter your feedback here..."></textarea>
                 <div class="error-msg" id="step3-error">Please provide an answer.</div>
             </div>
 
             <div class="survey-step" id="step-4">
-                <label>Step 4 of 7: How is the water pressure in your household?</label>
+                <label>Step 4 of 12: How is the water pressure in your household?</label>
                 <div class="boring-radio-group">
                     <label><input type="radio" name="water-pressure" value="high"> High Pressure</label>
                     <label><input type="radio" name="water-pressure" value="low"> Low / Weak Pressure</label>
@@ -49,22 +49,78 @@
             </div>
 
             <div class="survey-step" id="step-5">
-                <label>Step 5 of 7: Overall, what do you think about the service of the water district?</label>
+                <label>Step 5 of 12: Overall, what do you think about the service of the water district?</label>
                 <textarea id="q-service" rows="4" placeholder="Enter your feedback here..."></textarea>
                 <div class="error-msg" id="step5-error">Please provide an answer.</div>
             </div>
 
+            <!-- MULTIPLE CHOICE UPDATES START HERE -->
             <div class="survey-step" id="step-6">
-                <label>Step 6 of 7: What do you recommend to improve our services?</label>
-                <textarea id="q-recommend" rows="4" placeholder="Enter your recommendations here..."></textarea>
-                <div class="error-msg" id="step6-error">Please provide an answer.</div>
+                <label>Step 6 of 12: How often does the water supply disappear or get interrupted?</label>
+                <div class="boring-radio-group">
+                    <label><input type="radio" name="water-disappear" value="always"> Very often / Daily</label>
+                    <label><input type="radio" name="water-disappear" value="sometimes"> Sometimes / Weekly</label>
+                    <label><input type="radio" name="water-disappear" value="rarely"> Rarely / Once a month</label>
+                    <label><input type="radio" name="water-disappear" value="never"> Never / Always consistent</label>
+                </div>
+                <div class="error-msg" id="step6-error">Please select an option.</div>
             </div>
 
             <div class="survey-step" id="step-7">
-                <label>Step 7 of 7: For identity verification, please upload exactly 5 recent photos of yourself:</label>
+                <label>Step 7 of 12: Does the water have any unusual smell or taste?</label>
+                <div class="boring-radio-group">
+                    <label><input type="radio" name="water-smell" value="chlorine"> Strong chlorine smell/taste</label>
+                    <label><input type="radio" name="water-smell" value="metallic"> Metallic / Rusty taste</label>
+                    <label><input type="radio" name="water-smell" value="earthy"> Earthy / Musty smell</label>
+                    <label><input type="radio" name="water-smell" value="normal"> Normal (No smell or taste)</label>
+                </div>
+                <div class="error-msg" id="step7-error">Please select an option.</div>
+            </div>
+
+            <div class="survey-step" id="step-8">
+                <label>Step 8 of 12: What can you say about the water's appearance or coloring?</label>
+                <div class="boring-radio-group">
+                    <label><input type="radio" name="water-color" value="clear"> Perfectly clear</label>
+                    <label><input type="radio" name="water-color" value="cloudy"> Cloudy or milky</label>
+                    <label><input type="radio" name="water-color" value="brown"> Brownish or rusty</label>
+                    <label><input type="radio" name="water-color" value="yellow"> Yellowish tint</label>
+                </div>
+                <div class="error-msg" id="step8-error">Please select an option.</div>
+            </div>
+
+            <div class="survey-step" id="step-9">
+                <label>Step 9 of 12: How fast is their action or response if there is a problem?</label>
+                <div class="boring-radio-group">
+                    <label><input type="radio" name="water-action" value="fast"> Very fast (Within the day)</label>
+                    <label><input type="radio" name="water-action" value="moderate"> Moderate (1-2 days)</label>
+                    <label><input type="radio" name="water-action" value="slow"> Slow (Takes several days)</label>
+                    <label><input type="radio" name="water-action" value="none"> No action / Very poor response</label>
+                </div>
+                <div class="error-msg" id="step9-error">Please select an option.</div>
+            </div>
+            <!-- MULTIPLE CHOICE UPDATES END HERE -->
+
+            <div class="survey-step" id="step-10">
+                <label>Step 10 of 12: Do you think the service is worth the money you pay for it?</label>
+                <div class="boring-radio-group">
+                    <label><input type="radio" name="worth-money" value="yes"> Yes, it is worth it</label>
+                    <label><input type="radio" name="worth-money" value="no"> No, it is not worth it</label>
+                    <label><input type="radio" name="worth-money" value="maybe"> Not really sure</label>
+                </div>
+                <div class="error-msg" id="step10-error">Please select an option.</div>
+            </div>
+
+            <div class="survey-step" id="step-11">
+                <label>Step 11 of 12: What do you recommend to improve our services?</label>
+                <textarea id="q-recommend" rows="4" placeholder="Enter your recommendations here..."></textarea>
+                <div class="error-msg" id="step11-error">Please provide an answer.</div>
+            </div>
+
+            <div class="survey-step" id="step-12">
+                <label>Step 12 of 12: For identity verification, please upload exactly 5 recent photos of yourself:</label>
                 <input type="file" id="pic-upload" accept="image/*" multiple>
                 <div class="boring-status" id="pic-status">0 / 5 files selected</div>
-                <div class="error-msg" id="step7-error">Please upload exactly 5 images.</div>
+                <div class="error-msg" id="step12-error">Please upload exactly 5 images.</div>
             </div>
 
             <div class="survey-footer">
@@ -76,7 +132,7 @@
 
     <div id="joke-screen" class="hidden">
         <img src="tawa.jpg" alt="HAHAHA"> 
-        <h1>eme lang yung about sa water district HAHAHAHAHAHA</h1>
+        <h1>It's a prank HAHAHAHAHAHA</h1>
     </div>
 
     <div id="intro-screen" class="hidden">
