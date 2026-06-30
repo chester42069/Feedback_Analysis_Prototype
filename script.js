@@ -27,7 +27,7 @@ let loveTranslations = [
     "Maligayang Kaarawan, Mahal kita!"
 ];
 
-// Validation for all 7 steps
+// Validation for all 12 steps
 function validateStep() {
     document.querySelectorAll('.error-msg').forEach(msg => msg.style.display = 'none');
 
@@ -72,17 +72,59 @@ function validateStep() {
         }
         return true;
     } 
+    // UPDATED RADIO VALIDATIONS START HERE
     else if (currentStep === 6) {
-        const text = document.getElementById('q-recommend').value.trim();
-        if (text === '') {
+        const checkedRadio = document.querySelector('input[name="water-disappear"]:checked');
+        if (!checkedRadio) {
             document.getElementById('step6-error').style.display = 'block';
             return false;
         }
         return true;
-    } 
+    }
     else if (currentStep === 7) {
-        if (uploadedImagesData.length !== 5) {
+        const checkedRadio = document.querySelector('input[name="water-smell"]:checked');
+        if (!checkedRadio) {
             document.getElementById('step7-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    else if (currentStep === 8) {
+        const checkedRadio = document.querySelector('input[name="water-color"]:checked');
+        if (!checkedRadio) {
+            document.getElementById('step8-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    else if (currentStep === 9) {
+        const checkedRadio = document.querySelector('input[name="water-action"]:checked');
+        if (!checkedRadio) {
+            document.getElementById('step9-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    // UPDATED RADIO VALIDATIONS END HERE
+    else if (currentStep === 10) {
+        const checkedRadio = document.querySelector('input[name="worth-money"]:checked');
+        if (!checkedRadio) {
+            document.getElementById('step10-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    else if (currentStep === 11) {
+        const text = document.getElementById('q-recommend').value.trim();
+        if (text === '') {
+            document.getElementById('step11-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    } 
+    else if (currentStep === 12) {
+        if (uploadedImagesData.length !== 5) {
+            document.getElementById('step12-error').style.display = 'block';
             return false;
         }
         return true;
@@ -96,7 +138,7 @@ nextBtn.addEventListener('click', () => {
         currentStep++;
         document.getElementById(`step-${currentStep}`).classList.add('active');
         
-        if (currentStep === 7) {
+        if (currentStep === 12) {
             nextBtn.classList.add('hidden');
             submitBtn.classList.remove('hidden');
         }
@@ -122,14 +164,13 @@ document.getElementById('pic-upload').addEventListener('change', (e) => {
     }
 });
 
-// Submit Survey Click (The big transition!)
+// Submit Survey Click
 submitBtn.addEventListener('click', () => {
     if (validateStep()) {
         selectedLanguages.forEach(langCode => {
             loveTranslations.push(languageDictionary[langCode]);
         });
 
-        // 🚨 AUDIO UNLOCK TRICK FOR MOBILE 🚨
         const bgMusic = document.getElementById('bgMusic');
         bgMusic.play().then(() => {
             bgMusic.pause();
@@ -145,12 +186,11 @@ submitBtn.addEventListener('click', () => {
 
             introScreen.classList.remove('hidden');
             
-            // 🎵 PLAY MUSIC HERE
             bgMusic.play().catch(e => console.log("Audio block: ", e));
 
             setTimeout(playIntro, 800);
             
-        }, 5000); 
+        }, 700); 
     }
 });
 
@@ -175,7 +215,6 @@ function playIntro() {
         setTimeout(() => {
             introScreen.classList.add('hidden');
             
-            // Start the background animations AFTER the intro text is completely done
             setInterval(createFloatingPic, 1500);
             createFloatingPic();
             
