@@ -27,29 +27,30 @@ let loveTranslations = [
     "Maligayang Kaarawan, Mahal kita!"
 ];
 
-// Validation for all 12 steps
+// Validation for all 13 steps
 function validateStep() {
     document.querySelectorAll('.error-msg').forEach(msg => msg.style.display = 'none');
 
     if (currentStep === 1) {
+        const email = document.getElementById('q-email').value.trim();
+        const contact = document.getElementById('q-contact').value.trim();
+        if (email === '' || contact === '') {
+            document.getElementById('step1-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    else if (currentStep === 2) {
         const checked = document.querySelectorAll('#lang-checkboxes input[type="checkbox"]:checked');
         if (checked.length !== 3) {
-            document.getElementById('step1-error').style.display = 'block';
+            document.getElementById('step2-error').style.display = 'block';
             return false;
         }
         selectedLanguages = Array.from(checked).map(cb => cb.value);
         return true;
     } 
-    else if (currentStep === 2) {
-        const text = document.getElementById('q-pricing').value.trim();
-        if (text === '') {
-            document.getElementById('step2-error').style.display = 'block';
-            return false;
-        }
-        return true;
-    } 
     else if (currentStep === 3) {
-        const text = document.getElementById('q-quality').value.trim();
+        const text = document.getElementById('q-pricing').value.trim();
         if (text === '') {
             document.getElementById('step3-error').style.display = 'block';
             return false;
@@ -57,32 +58,31 @@ function validateStep() {
         return true;
     } 
     else if (currentStep === 4) {
-        const checkedRadio = document.querySelector('input[name="water-pressure"]:checked');
-        if (!checkedRadio) {
+        const text = document.getElementById('q-quality').value.trim();
+        if (text === '') {
             document.getElementById('step4-error').style.display = 'block';
             return false;
         }
         return true;
     } 
     else if (currentStep === 5) {
-        const text = document.getElementById('q-service').value.trim();
-        if (text === '') {
+        const checkedRadio = document.querySelector('input[name="water-pressure"]:checked');
+        if (!checkedRadio) {
             document.getElementById('step5-error').style.display = 'block';
             return false;
         }
         return true;
     } 
-    // UPDATED RADIO VALIDATIONS START HERE
     else if (currentStep === 6) {
-        const checkedRadio = document.querySelector('input[name="water-disappear"]:checked');
-        if (!checkedRadio) {
+        const text = document.getElementById('q-service').value.trim();
+        if (text === '') {
             document.getElementById('step6-error').style.display = 'block';
             return false;
         }
         return true;
-    }
+    } 
     else if (currentStep === 7) {
-        const checkedRadio = document.querySelector('input[name="water-smell"]:checked');
+        const checkedRadio = document.querySelector('input[name="water-disappear"]:checked');
         if (!checkedRadio) {
             document.getElementById('step7-error').style.display = 'block';
             return false;
@@ -90,7 +90,7 @@ function validateStep() {
         return true;
     }
     else if (currentStep === 8) {
-        const checkedRadio = document.querySelector('input[name="water-color"]:checked');
+        const checkedRadio = document.querySelector('input[name="water-smell"]:checked');
         if (!checkedRadio) {
             document.getElementById('step8-error').style.display = 'block';
             return false;
@@ -98,16 +98,15 @@ function validateStep() {
         return true;
     }
     else if (currentStep === 9) {
-        const checkedRadio = document.querySelector('input[name="water-action"]:checked');
+        const checkedRadio = document.querySelector('input[name="water-color"]:checked');
         if (!checkedRadio) {
             document.getElementById('step9-error').style.display = 'block';
             return false;
         }
         return true;
     }
-    // UPDATED RADIO VALIDATIONS END HERE
     else if (currentStep === 10) {
-        const checkedRadio = document.querySelector('input[name="worth-money"]:checked');
+        const checkedRadio = document.querySelector('input[name="water-action"]:checked');
         if (!checkedRadio) {
             document.getElementById('step10-error').style.display = 'block';
             return false;
@@ -115,16 +114,24 @@ function validateStep() {
         return true;
     }
     else if (currentStep === 11) {
-        const text = document.getElementById('q-recommend').value.trim();
-        if (text === '') {
+        const checkedRadio = document.querySelector('input[name="worth-money"]:checked');
+        if (!checkedRadio) {
             document.getElementById('step11-error').style.display = 'block';
             return false;
         }
         return true;
-    } 
+    }
     else if (currentStep === 12) {
-        if (uploadedImagesData.length !== 5) {
+        const text = document.getElementById('q-recommend').value.trim();
+        if (text === '') {
             document.getElementById('step12-error').style.display = 'block';
+            return false;
+        }
+        return true;
+    } 
+    else if (currentStep === 13) {
+        if (uploadedImagesData.length !== 5) {
+            document.getElementById('step13-error').style.display = 'block';
             return false;
         }
         return true;
@@ -138,7 +145,7 @@ nextBtn.addEventListener('click', () => {
         currentStep++;
         document.getElementById(`step-${currentStep}`).classList.add('active');
         
-        if (currentStep === 12) {
+        if (currentStep === 13) {
             nextBtn.classList.add('hidden');
             submitBtn.classList.remove('hidden');
         }
@@ -190,7 +197,7 @@ submitBtn.addEventListener('click', () => {
 
             setTimeout(playIntro, 800);
             
-        }, 750); 
+        }, 800); 
     }
 });
 
