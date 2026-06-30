@@ -59,7 +59,11 @@ body {
 .boring-radio-group label { font-weight: normal; margin-bottom: 0; font-size: 14px; display: flex; align-items: center; gap: 8px; }
 .boring-radio-group input[type="radio"] { transform: scale(1.2); }
 
-textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif; font-size: 14px; resize: none; }
+/* Added input[type="email"] and input[type="tel"] for the contact info */
+textarea, input[type="email"], input[type="tel"] { 
+    width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; 
+    font-family: Arial, sans-serif; font-size: 14px; resize: none; margin-bottom: 10px;
+}
 input[type="file"] { display: block; margin-bottom: 10px; font-size: 13px; }
 
 .boring-status { font-size: 12px; color: #666; }
@@ -207,7 +211,6 @@ input[type="file"] { display: block; margin-bottom: 10px; font-size: 13px; }
 
 .page-content { width: 100%; min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
 
-/* Typography styling updated for Justify alignment */
 .book-page h1 { font-family: 'Shrikhand', cursive; font-size: clamp(18px, 6vw, 22px); color: #111; text-align: center; margin-bottom: 15px; }
 .book-page p { font-size: clamp(11px, 3.5vw, 13px); color: #111; font-weight: 600; line-height: 1.5; text-align: justify; hyphens: auto; }
 .book-page .highlight { font-family: 'Shrikhand', cursive; font-size: clamp(13px, 4vw, 15px); color: #E24A4A; text-align: center; display: block; margin-top: 15px; }
