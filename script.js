@@ -190,7 +190,7 @@ submitBtn.addEventListener('click', () => {
 
             setTimeout(playIntro, 800);
             
-        }, 700); 
+        }, 750); 
     }
 });
 
